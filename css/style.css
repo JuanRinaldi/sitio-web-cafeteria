@@ -1,0 +1,287 @@
+/* CSS BASICO */
+
+:root{
+
+}
+
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+
+/* CSS PARA NAV-BAR */
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+.nav-bar{
+    background-color: black;
+    height: 3rem;
+    text-transform: uppercase;
+}
+
+.nav-bar__header{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: 1px solid white; */
+}
+
+.nav-bar__logo, .nav-bar__burga , .nav-bar__cerrar, .nav-bar__link{
+    color: white;
+    font-size: 1.7rem;
+}
+
+.nav-bar__container{
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    transition: height .4s ease;
+}
+
+#nav-bar__header:target .nav-bar__container{
+    height: 15rem;
+}
+
+#nav-bar__header:target .open{
+    display: none;
+}
+
+#nav-bar__header:target .close{
+    display: flex;
+}
+
+.close{
+    display: none;
+}
+
+.nav-bar__link{
+    color:white;
+    text-decoration: white;
+}
+
+/* CSS PARA SECCION DE BIENVENIDA */
+
+.welcome{
+    background-image: url(/images/cafeteria.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.welcome h1{
+    color: grey;
+    margin-top: 2rem;
+    font-size: 5rem;
+    background-color: black;
+    box-shadow: 5px 5px 5px 5px white;
+}
+
+
+/* CSS PARA PRIMER SECCION, TIPOS DE CAFE */
+
+.titulos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    font-size: 2.5rem;
+}
+
+.main__container__info{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+
+}
+
+.main__container__info__cafes{
+    border: .1px solid grey;
+    padding: 1rem;    
+    text-align: center;
+    box-shadow: 5px 3px grey;
+}
+
+.titulo__article{
+    font-size: 2rem;
+}
+
+.descripcion__article{
+    font-size: 1.2rem;
+    background-color: black;
+    color:white;
+    padding: 1rem;
+    
+}
+
+.img__article{
+    object-fit: cover;
+    width: 100%;
+    padding: 1rem;
+}
+
+.fuente-info{
+    margin: 1rem;
+    color: black;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fuente-info:hover{
+    color:grey;
+    font-size: 1.3rem;
+    transition: .3s;
+}
+
+/* CSS PARA SEGUNDA SECCION, CAFETERIAS */
+
+.cafeterias{
+    margin: 0 auto;
+    display: grid;
+    place-content:center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap:10px;
+}
+
+
+.cafeterias__art{
+    border: 1px solid black;
+    margin: 1rem;
+    width: 90%;
+    padding: 1rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.cafeterias__art:hover{
+    box-shadow:5px 3px black;
+    background-color: white;
+    color: black;
+}
+
+.cafeterias__art h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cafeterias__art p{
+    margin-bottom: 1.5rem;
+}
+
+.cafeterias__art a{
+    color:grey;
+    border: 1px solid grey;
+    padding: 3px;
+    
+}
+
+/* FOOTER */
+
+.pie__de__pagina{
+    width: 100%;
+    background-color: black;
+    color:white;
+}
+
+.pie__de__pagina__info{
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:50px;
+    padding: 45px 0px;
+    
+}
+
+.box{
+    text-align: center;
+}
+
+.box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.box h3{
+    margin-bottom: 1rem;
+}
+
+.redes__sociales{
+    display: inline-block;
+    line-height: 45px;
+    text-align: center;
+}
+
+.redes__sociales a{
+    margin-right: 1rem;
+    background-color: grey;
+    color: white;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.pie__de__pagina__container{
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+
+/* MEDIAS QUERYS */
+
+@media (min-width:760px){
+    .nav-bar{
+        height: 5rem;
+        font-size: 1.2rem;
+    }
+
+    .nav-bar__burga{
+        display: none;
+    }
+
+    .nav-bar__container{
+        height: auto;
+        flex-direction: row;
+        position: static;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    .nav-bar__header{
+        border-bottom: none;
+    }
+}
